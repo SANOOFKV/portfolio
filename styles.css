@@ -4,8 +4,8 @@
     /* Warm off-white */
     --text-primary: #1A1F2C;
     --text-secondary: #8E9196;
-    --accent: #EA580C;
-    /* Deep Coral Orange */
+    --accent: #E76E50;
+    /* Soft Coral Orange */
     --accent-light: #FCE7DE;
     --border: #E5E7EB;
 
@@ -138,18 +138,19 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    padding: 0.8rem 1.5rem;
     background-color: #FACC15;
     /* Bright Yellow */
     color: var(--text-primary);
     border-radius: 12px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 700;
     transition: var(--transition);
     animation: float-square-btn 3s ease-in-out infinite;
     border: none;
     box-shadow: 0 4px 10px rgba(250, 204, 21, 0.3);
+    white-space: nowrap;
 }
 
 .btn-talk:hover {
