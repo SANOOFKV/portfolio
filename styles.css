@@ -257,7 +257,7 @@ header nav {
     font-family: var(--font-heading);
     font-size: 35vw;
     line-height: 1;
-    color: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.05);
     z-index: 0;
     pointer-events: none;
     user-select: none;
@@ -481,7 +481,7 @@ footer {
     .hero-watermark {
         font-size: 60vw;
         right: -20%;
-        opacity: 0.05;
+        opacity: 0.08;
     }
 
     .about-grid {
