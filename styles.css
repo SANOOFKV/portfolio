@@ -135,21 +135,40 @@ header nav {
 }
 
 .btn-talk {
-    border: 1px solid var(--text-primary);
-    border-radius: 9999px;
-    padding: 0.75rem 2rem;
-    font-size: 0.9rem;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: var(--transition);
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #FACC15;
+    /* Bright Yellow */
+    color: var(--text-primary);
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    animation: float-square-btn 3s ease-in-out infinite;
+    border: none;
+    box-shadow: 0 4px 10px rgba(250, 204, 21, 0.3);
 }
 
 .btn-talk:hover {
-    background: var(--text-primary);
-    color: white;
+    background-color: #EAB308;
+    /* Darker Yellow */
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(250, 204, 21, 0.5);
+}
+
+@keyframes float-square-btn {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
 }
 
 /* Hero */
@@ -251,16 +270,21 @@ header nav {
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
+    /* text-align: center; Removed global center to keep text clean, titles centered below */
 }
 
 .section-title {
     font-family: var(--font-heading);
     font-size: 3rem;
     margin-bottom: 3rem;
+    text-align: center;
+    /* Center all section titles */
 }
 
 .stats {
     display: flex;
+    justify-content: center;
+    /* Center stats */
     gap: 4rem;
     margin-top: 3rem;
     padding-top: 2rem;
@@ -291,6 +315,8 @@ header nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
+    justify-content: center;
+    /* Center the grid items if they don't fill width */
 }
 
 .project-card {
@@ -435,8 +461,12 @@ footer {
 
     .hero-content {
         padding-left: 0;
+        padding-right: 0;
         text-align: center;
         align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
     }
 
     .hero .title {
@@ -473,9 +503,9 @@ footer {
     }
 
     .btn-talk {
-        display: none;
+        margin-right: 1rem;
+        /* Add some spacing on mobile */
     }
 }
 
 /* Hide talk button on mobile if needed, or adjust */
-}
