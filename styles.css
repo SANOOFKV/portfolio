@@ -139,9 +139,9 @@ header nav {
     align-items: center;
     justify-content: center;
     padding: 0.8rem 1.5rem;
-    background-color: #FACC15;
-    /* Bright Yellow */
-    color: var(--text-primary);
+    background-color: var(--accent);
+    /* Brand Coral */
+    color: white;
     border-radius: 12px;
     text-decoration: none;
     font-size: 0.95rem;
@@ -149,15 +149,13 @@ header nav {
     transition: var(--transition);
     animation: float-square-btn 3s ease-in-out infinite;
     border: none;
-    box-shadow: 0 4px 10px rgba(250, 204, 21, 0.3);
+    box-shadow: 0 4px 10px var(--accent-light);
     white-space: nowrap;
 }
 
 .btn-talk:hover {
-    background-color: #EAB308;
-    /* Darker Yellow */
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(250, 204, 21, 0.5);
+    filter: brightness(1.1);
+    transform: scale(1.05);
 }
 
 @keyframes float-square-btn {
