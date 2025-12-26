@@ -295,7 +295,8 @@ header nav {
 .profile-container {
     position: relative;
     max-width: 450px;
-    margin: 0 auto;
+    margin: -3rem auto 0;
+    /* Move image up */
 }
 
 .profile-photo {
