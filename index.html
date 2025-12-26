@@ -25,33 +25,39 @@
 <body>
     <header id="navbar">
         <nav class="container">
-            <a href="#" class="logo">Sanoof<span class="dot">.</span></a>
+            <a href="#" class="logo">SP.</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#projects">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+            <a href="#contact" class="btn-talk">Let's Talk <i class="fas fa-arrow-right"
+                    style="margin-left: 0.5rem; font-size: 0.8em;"></i></a>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
+            <div class="hero-watermark">SP</div>
             <div class="container hero-content">
-                <span class="subtitle">Hi, I'm</span>
-                <h1 class="title"><span class="highlight-name">Sanoof Padikkal</span><br><span class="highlight">Digital
-                        Marketer</span></h1>
-                <p class="description">Driving growth through Data Analytics and strategic Closing. I help businesses
-                    scale by turning data into decisions and leads into upgrades.</p>
+                <div class="status-badge" style="text-transform: none;">
+                    Hi, I'm
+                </div>
+                <!-- Title structured for multi-color support -->
+                <h1 class="title">
+                    <span>Sanoof</span>
+                    <span class="highlight-name">Padikkal</span>
+                </h1>
+                <p class="description">Developer & Designer crafting digital experiences with precision and creativity.
+                </p>
                 <div class="cta-group">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"
+                            style="margin-left:8px"></i></a>
+                    <a href="#contact" class="btn btn-link">Get in touch</a>
                 </div>
             </div>
-            <div class="hero-bg-accent"></div>
+            <!-- Removed old bg-accent -->
         </section>
 
         <section id="about" class="section">
@@ -77,9 +83,14 @@
                         </div>
                     </div>
                     <div class="about-visual">
-                        <div class="profile-container">
-                            <img src="me2..png" alt="Sanoof Padikkal" class="profile-photo">
-                            <div class="profile-bg-shape"></div>
+                        <div class="profile-container"
+                            style="position: relative; max-width: 450px; margin: -8rem auto 0;">
+                            <!-- Inline style to ensure it works immediately, can be moved to CSS -->
+                            <img src="me2..png" alt="Sanoof Padikkal" class="profile-photo"
+                                style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); filter: grayscale(100%);">
+                            <div class="profile-bg-shape"
+                                style="position: absolute; top: 20px; right: -20px; width: 100%; height: 100%; border: 2px solid var(--accent); border-radius: 20px; z-index: -1;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -165,7 +176,7 @@
                         <div class="form-group">
                             <textarea placeholder="Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn-submit">Send Message</button>
                     </form>
                 </div>
             </div>
