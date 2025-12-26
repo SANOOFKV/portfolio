@@ -81,23 +81,32 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = contactForm.querySelector('button');
+        const originalText = btn.innerText;
 
         btn.disabled = true;
+        btn.innerText = 'Sending...';
 
         fetch(scriptURL, {
             method: 'POST',
-            mode: 'no-cors', // Bypasses CORS redirect issues common with Apps Script
+            mode: 'no-cors',
             body: new URLSearchParams(new FormData(contactForm))
         })
             .then(response => {
-                // Since 'no-cors' mode is used, we won't get a readable response,
-                // so we reset the form immediately upon a successful-ish fetch attempt.
+                btn.innerText = 'Sent!';
                 contactForm.reset();
-                btn.disabled = false;
+
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }, 2000);
             })
             .catch(error => {
                 console.error('Error!', error.message);
-                btn.disabled = false;
+                btn.innerText = 'Error!';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }, 2000);
             });
     });
 }
