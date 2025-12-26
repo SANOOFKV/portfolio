@@ -73,27 +73,28 @@ document.querySelectorAll('.section-title, .project-card, .about-text, .contact-
     observer.observe(el);
 });
 
-// Form Submission (Demo)
+// Form Submission to Google Sheets
 const contactForm = document.querySelector('.contact-form');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwWmCYqcg54IU9SrWKT8iSlmeZPWEU9JwdHNqhuyu5mdmlioWdAT2mxexCu-Y7H_7y-/exec';
+
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = contactForm.querySelector('button');
-        const originalText = btn.innerText;
 
-        btn.innerText = 'Sending...';
         btn.disabled = true;
 
-        setTimeout(() => {
-            btn.innerText = 'Message Sent!';
-            btn.style.backgroundColor = '#27C93F'; // Green color from CSS vars
-            contactForm.reset();
-
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.backgroundColor = '';
+        fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(contactForm)
+        })
+            .then(response => {
+                contactForm.reset();
                 btn.disabled = false;
-            }, 3000);
-        }, 1500);
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                btn.disabled = false;
+            });
     });
 }

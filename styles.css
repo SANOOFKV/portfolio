@@ -474,9 +474,8 @@ footer {
     }
 
     .status-badge {
-        margin-left: 0;
+        margin-left: auto;
         margin-right: auto;
-        align-self: flex-start;
     }
 
     .hero-watermark {
