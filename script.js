@@ -86,9 +86,12 @@ if (contactForm) {
 
         fetch(scriptURL, {
             method: 'POST',
-            body: new FormData(contactForm)
+            mode: 'no-cors', // Bypasses CORS redirect issues common with Apps Script
+            body: new URLSearchParams(new FormData(contactForm))
         })
             .then(response => {
+                // Since 'no-cors' mode is used, we won't get a readable response,
+                // so we reset the form immediately upon a successful-ish fetch attempt.
                 contactForm.reset();
                 btn.disabled = false;
             })
