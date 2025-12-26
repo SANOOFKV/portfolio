@@ -38,12 +38,18 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.7;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -183,7 +189,7 @@ header nav {
 }
 
 .subtitle {
-    color: var(--accent);
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -199,6 +205,10 @@ header nav {
     margin-bottom: 2rem;
     font-weight: 700;
     color: var(--text-primary);
+}
+
+.hero .title .highlight-name {
+    color: var(--accent);
 }
 
 .hero .title .highlight {
@@ -230,6 +240,8 @@ header nav {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
+    max-width: 100%;
+    /* Prevent mobile overflow */
     background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
     filter: blur(100px);
     z-index: 1;
