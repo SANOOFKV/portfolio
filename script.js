@@ -102,6 +102,12 @@ if (contactForm) {
                 }
                 contactForm.reset();
                 btn.disabled = false;
+
+                // Auto-reset back to form state after 5 seconds
+                setTimeout(() => {
+                    if (thanksCard) thanksCard.style.display = 'none';
+                    contactForm.style.display = 'block';
+                }, 5000);
             })
             .catch(error => {
                 console.error('Error!', error.message);
