@@ -106,7 +106,7 @@ if (contactForm) {
                 // Auto-reset back to form state after 5 seconds
                 setTimeout(() => {
                     if (thanksCard) thanksCard.style.display = 'none';
-                    contactForm.style.display = 'block';
+                    contactForm.style.display = 'flex'; // Restored to flex for correct layout
                 }, 5000);
             })
             .catch(error => {
