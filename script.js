@@ -75,7 +75,7 @@ document.querySelectorAll('.section-title, .project-card, .about-text, .contact-
 
 // Form Submission to Google Sheets
 const contactForm = document.querySelector('.contact-form');
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzV60hQGq07Nj9AHlpYr18PcHmWlGMuvemUmhjzspeBSkiw4I9yijcGuJMHUb0yDOmF9w/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzFaU2taygDLHZDK2lvmyND_azK5vjpmpnx-ucNGa_u7o5Z1ePwHS2FCLrcArnygAQ_/exec';
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
