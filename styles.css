@@ -13,7 +13,7 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'DM Sans', sans-serif;
 
-    --section-padding: 6rem 1.5rem;
+    --section-padding: 4rem 1.5rem;
     --container-max-width: 1400px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -172,7 +172,7 @@ header nav {
 
 /* Hero */
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     padding-top: 100px;
