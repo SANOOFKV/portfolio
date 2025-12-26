@@ -86,10 +86,9 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = contactForm.querySelector('button');
-        const originalText = btn.innerText;
+        const thanksCard = document.getElementById('thanks-card');
 
         btn.disabled = true;
-        btn.innerText = 'Sending...';
 
         fetch(scriptURL, {
             method: 'POST',
@@ -97,21 +96,16 @@ if (contactForm) {
             body: new URLSearchParams(new FormData(contactForm))
         })
             .then(response => {
-                btn.innerText = 'Sent!';
+                contactForm.style.display = 'none';
+                if (thanksCard) {
+                    thanksCard.style.display = 'block';
+                }
                 contactForm.reset();
-
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 2000);
+                btn.disabled = false;
             })
             .catch(error => {
                 console.error('Error!', error.message);
-                btn.innerText = 'Error!';
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 2000);
+                btn.disabled = false;
             });
     });
 }

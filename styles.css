@@ -269,7 +269,6 @@ header nav {
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
-    /* text-align: center; Removed global center to keep text clean, titles centered below */
 }
 
 .section-title {
@@ -277,7 +276,12 @@ header nav {
     font-size: 3rem;
     margin-bottom: 3rem;
     text-align: center;
-    /* Center all section titles */
+}
+
+#about .section-title {
+    text-align: left;
+    margin-left: 0;
+    transform: none;
 }
 
 .stats {
@@ -414,6 +418,47 @@ header nav {
     transform: translateY(-2px);
 }
 
+/* Thanks Card */
+.thanks-card {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    animation: fadeIn 0.5s ease;
+}
+
+.thanks-card i {
+    font-size: 3rem;
+    color: #27C93F;
+    margin-bottom: 1.5rem;
+}
+
+.thanks-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.thanks-card p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Footer */
 footer {
     padding: 4rem 0;
@@ -487,6 +532,10 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+        text-align: center;
+    }
+
+    #about .section-title {
         text-align: center;
     }
 
