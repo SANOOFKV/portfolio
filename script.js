@@ -6,7 +6,9 @@ const sections = document.querySelectorAll('section');
 
 // Event Listeners
 window.addEventListener('scroll', handleScroll);
-hamburger.addEventListener('click', toggleMenu);
+if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+}
 
 // Fix for smooth scrolling on anchor links even if href="#"
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -17,8 +19,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.scrollIntoView({
                 behavior: 'smooth'
             });
-            // Close mobile menu if open
-            navLinks.classList.remove('active');
+            if (navLinks) {
+                navLinks.classList.remove('active');
+            }
         }
     });
 });
@@ -51,7 +54,9 @@ function handleScroll() {
 }
 
 function toggleMenu() {
-    navLinks.classList.toggle('active');
+    if (navLinks) {
+        navLinks.classList.toggle('active');
+    }
 }
 
 // Reveal Animations on Scroll
