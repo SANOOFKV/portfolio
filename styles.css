@@ -429,22 +429,11 @@ header nav {
     animation: fadeIn 0.5s ease;
 }
 
-.thanks-card i {
-    font-size: 3rem;
-    color: #27C93F;
-    margin-bottom: 1.5rem;
-}
-
 .thanks-card h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.thanks-card p {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 @keyframes fadeIn {
