@@ -503,7 +503,8 @@ footer {
 
     .btn-talk {
         margin-right: 1rem;
-        /* Add some spacing on mobile */
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
     }
 }
 
