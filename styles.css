@@ -358,30 +358,81 @@ header nav {
 }
 
 /* Contact */
-.contact-wrapper {
+/* Contact Section Redesign */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
     background: #fff;
-    padding: 3rem;
-    border-radius: 32px;
+    border-radius: 24px;
     border: 1px solid var(--border);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-color);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.25rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text .label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.card-text .value {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-top: 2rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
     border: 1px solid var(--border);
     border-radius: 24px;
-    background: var(--muted-bg);
+    background: #fff;
     font-family: var(--font-body);
     font-size: 1rem;
     transition: var(--transition);
@@ -389,49 +440,49 @@ header nav {
 }
 
 .form-group textarea {
-    min-height: 150px;
+    min-height: 180px;
     resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--accent);
-    background: #fff;
     box-shadow: 0 0 0 4px var(--accent-light);
 }
 
 .btn-submit {
     width: 100%;
-    padding: 1rem;
+    padding: 1.25rem;
     background: var(--text-primary);
     color: white;
     border: none;
     border-radius: 9999px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: var(--transition);
+    letter-spacing: 0.5px;
 }
 
 .btn-submit:hover {
     background: var(--accent);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-light);
 }
 
 /* Thanks Card */
 .thanks-card {
     text-align: center;
-    padding: 3rem;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 4rem 2rem;
+    background: #fff;
+    border-radius: 24px;
     border: 1px solid var(--border);
     animation: fadeIn 0.5s ease;
 }
 
 .thanks-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--text-primary);
     margin-bottom: 0;
 }
@@ -445,6 +496,17 @@ header nav {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-header h2 {
+        font-size: 3.5rem !important;
     }
 }
 
