@@ -10,21 +10,9 @@ if (hamburger) {
     hamburger.addEventListener('click', toggleMenu);
 }
 
-// Fix for smooth scrolling on anchor links even if href="#"
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-            if (navLinks) {
-                navLinks.classList.remove('active');
-            }
-        }
-    });
-});
+
+
+
 
 // Functions
 function handleScroll() {
@@ -67,14 +55,14 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('active');
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.section-title, .project-card, .about-text, .contact-wrapper').forEach(el => {
-    el.classList.add('hidden');
+document.querySelectorAll('.section-title, .project-card, .about-text, .contact-content, .contact-form-container, .stat-item, .contact-card').forEach(el => {
+    el.classList.add('reveal');
     observer.observe(el);
 });
 
