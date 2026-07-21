@@ -8,6 +8,7 @@
     /* Soft Coral Orange */
     --accent-light: #FCE7DE;
     --border: #E5E7EB;
+    --muted-bg: #F3F4F6;
 
     /* Font Families */
     --font-heading: 'Playfair Display', serif;
@@ -354,11 +355,19 @@ header nav {
     margin-bottom: 0.5rem;
 }
 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+
 .tags span {
     background: var(--muted-bg);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.75rem;
+    color: var(--text-secondary);
 }
 
 /* Contact */
