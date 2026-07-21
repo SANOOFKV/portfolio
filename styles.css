@@ -291,6 +291,7 @@ header nav {
 
 .stats {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     /* Center stats */
     gap: 4rem;
@@ -682,6 +683,14 @@ footer {
 
     #about .section-title {
         text-align: center;
+    }
+
+    .stats {
+        gap: 2rem 2.5rem;
+    }
+
+    #skills.tags {
+        justify-content: center;
     }
 
     .profile-container {
